@@ -1,0 +1,27 @@
+.centeredimage {
+    height: 100%;
+    width: 100%;
+}
+
+.centeredimage img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    position: relative;
+}
+
+.polaroid {
+    border: 1px solid gray;
+    width: 60vmin;
+    height: 60vmin;
+    overflow: hidden;
+    top: calc(50% - 30vmin);
+    left: calc(50% - 30vmin);
+    position: fixed;
+    padding: 4px;
+    border-radius: 8px;
+    transform: rotate(5deg);
+    box-shadow: 1vmin 5vmin 5vmin 0vmin gray;
+}
+
