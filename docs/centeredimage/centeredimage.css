@@ -1,0 +1,22 @@
+.imagecontainer {
+    height: 20vmin;
+    width: 20vmin;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.centeredcoverimage {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+}
+
+.imagecenteredadjusted {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
