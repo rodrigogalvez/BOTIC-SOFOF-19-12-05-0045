@@ -6,7 +6,7 @@ Este menú no es responsivo.
 
 **Estrucutra HTML**: El menú se basa en marcadores de listas sin orden ```ul``` y ```li```. El ```ul``` más externo tiene clase ```menu``` para ayudar a presentar el estilo de cada opción del menú. La clase ```submenu``` se utiliza para señalara el ítem que contiene un submenú.
 
-```HTML
+```xml
     <ul class="menu">
         <li><a href="#perfil">Perfil</a></li>
         <li><a href="#dominio">Dominios</a></li>

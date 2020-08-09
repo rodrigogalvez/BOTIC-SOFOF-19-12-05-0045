@@ -6,7 +6,7 @@
 
 Para incluir la grilla FlexGrid, se utiliza un tag semántico ```link```. No es necesario descargarla. Basta con indicar el CDN donde se aloja.
 
-```HTML
+```xml
 <link rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css"
     type="text/css">
@@ -15,7 +15,7 @@ El menú se basa en marcadores ```div``` con clase ```menu``` para adaptar la pr
 
 Recordar que siempre es necesario indicar todos los tamaños de pantalla para establecer la visualización correcta de la grilla. En cada tamaño de pantalla, se deben contar 12 columnas para que ocurra el salto de línea.
 
-```HTML
+```xml
     <div class="menu">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">

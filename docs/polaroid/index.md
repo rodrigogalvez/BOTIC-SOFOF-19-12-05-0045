@@ -6,7 +6,7 @@
 
 El primer ```div``` con clase ```polaroid```, que muestra un marco simple con bordes redondeados, inclinado cinco grados y con sombra. El segundo ```div``` con clase ```centeredimage``` para mostrar la imagen cuadrada ocupando todo el espacio disponible de este contenedor.
 
-```html
+```xml
     <div class="polaroid">
         <div class="centeredimage">
             <img src="polaroid.jpg" alt="">

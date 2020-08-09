@@ -8,7 +8,7 @@
 
 La imagen de *Maya.jpg* es tipo paisaje (más ancha que alta) y la imagen *Pexel.jpg* es de tipo retrato (más alta que ancha).
 
-```HTML
+```xml
     <div class="imagecontainer">
         <img class="centeredcoverimage" src="Maya.jpg" alt="">
     </div>
