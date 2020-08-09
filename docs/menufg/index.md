@@ -2,7 +2,7 @@
 
 **Descripción**: El menú basado en FlexGrid fue desarrollado en clases como demostración del uso de FlexGrid para crear secciones responsivas en una página HTML.
 
-**Estrucutra HTML**: 
+**Estructura HTML**: 
 
 Para incluir la grilla FlexGrid, se utiliza un tag semántico ```link```. No es necesario descargarla. Basta con indicar el CDN donde se aloja.
 

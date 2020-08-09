@@ -2,7 +2,7 @@
 
 **Descripción**: Este ejercicio fue hecho después de una de las pruebas del módulo 1. Se pidió a los estudiantes crear una página de rescate de perritos en adopción, basada en una galería de imágenes que debía mostrar una fotografía pequeña y grande de cada perrito. Para presentar la imagen más grande, me pareció interesante inclinarla y ponerle un marco como si fuera una foto tipo *Polaroid*.
 
-**Estrucutra HTML**: La estructura es muy sencilla. Pero hay que tener en cuenta un detalle importante: se necesitan dos contenedores anidados (dos ```div``` anidados).
+**Estructura HTML**: La estructura es muy sencilla. Pero hay que tener en cuenta un detalle importante: se necesitan dos contenedores anidados (dos ```div``` anidados).
 
 El primer ```div``` con clase ```polaroid```, que muestra un marco simple con bordes redondeados, inclinado cinco grados y con sombra. El segundo ```div``` con clase ```centeredimage``` para mostrar la imagen cuadrada ocupando todo el espacio disponible de este contenedor.
 
