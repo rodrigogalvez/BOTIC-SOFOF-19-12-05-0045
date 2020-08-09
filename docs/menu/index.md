@@ -2,6 +2,8 @@
 
 **Descripción**: El menú simple fue desarrollado en clases durante el módulo de introducción a HTML y CSS. Consiste en una lista de opciones presentadas en la parte superior de la pantalla que se destacan al pasar el cursor del ratón por encima. Una de las opciones del menú tiene un submenú.
 
+Este menú no es responsivo.
+
 **Estrucutra HTML**: El menú se basa en marcadores de listas sin orden ```ul``` y ```li```. El ```ul``` más externo tiene clase ```menu``` para ayudar a presentar el estilo de cada opción del menú. La clase ```submenu``` se utiliza para señalara el ítem que contiene un submenú.
 
 ```HTML

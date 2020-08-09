@@ -1,16 +1,3 @@
-.centeredimage {
-    height: 100%;
-    width: 100%;
-}
-
-.centeredimage img {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    position: relative;
-}
-
 .polaroid {
     border: 1px solid gray;
     width: 60vmin;
@@ -24,4 +11,18 @@
     transform: rotate(5deg);
     box-shadow: 1vmin 5vmin 5vmin 0vmin gray;
 }
+
+.centeredimage {
+    height: 100%;
+    width: 100%;
+}
+
+.centeredimage img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    position: relative;
+}
+
 
