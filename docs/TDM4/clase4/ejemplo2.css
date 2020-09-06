@@ -1,0 +1,17 @@
+
+/* Todas las tablas con el mismo estilo. */
+
+/* table {
+    border-collapse: collapse;
+}
+
+table > thead > tr > th {
+    border: solid 1px white;
+    background-color: blue;
+    color: white;
+    font-weight: normal;
+}
+
+table > tbody > tr > td {
+    border: dotted  1px black;
+} */

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>BootstrapVue</title>
+    <!-- Inclusión de VueJS y BootstrapVue -->
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <!-- Adaptaciones para navegadores no compatibles -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"></script>
+    <!-- Documentación de BootstrapVue: https://bootstrap-vue.org/docs/components -->
+    <script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <b-container>
+            <b-jumbotron header="Verificación de RUT" lead="Demostración de la verificación de un RUT">
+                <p>Implementa un algoritmo para ingresar un RUT y verificar si está correcto</p>
+            </b-jumbotron>
+            <b-form-group description="Ingrese un RUT en formato 12345678-9" label="RUT">
+                <b-form-input v-model.trim="rut" placeholder="12345678-9"></b-form-input>
+            </b-form-group>
+            <b-alert variant="info" :show="estadoVerificacion==0">El RUT es muy corto</b-alert>
+            <b-alert variant="success" :show="estadoVerificacion==1">El RUT es correcto</b-alert>
+            <b-alert variant="danger" :show="estadoVerificacion==2">El RUT es erróneo</b-alert>
+        </b-container>
+    </div>
+
+    <script src="ejemplo1.js"></script>
+</body>
+
+</html>

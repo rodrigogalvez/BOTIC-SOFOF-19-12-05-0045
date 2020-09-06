@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="appabarrotes">
+        <hr>
+        <div>PRUEBA</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>TITULO 1</th>
+                    <th>TITULO 1</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        DATO 1
+                    </td>
+                    <td>
+                        DATO 2
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table>
+            <tr>
+                <td>Nombre</td>
+                <td>código</td>
+                <td>precio</td>
+            </tr>
+            <tr is="elemento-abarrote" v-for="abarrote in comestibles" v-bind:elemento="abarrote"
+                v-bind:key="abarrote.codigo">
+            </tr>
+        </table>
+    </div>
+
+</body>
+<style>
+    td {
+        border: solid 1px black;
+    }
+</style>
+<script>
+
+    Vue.component(
+        'elemento-abarrote',
+        {
+            props: ['elemento'],
+            template: '<tr><td>{{ elemento.nombre }}</td><td>{{ elemento.codigo }}</td><td>{{ elemento.precio }}</td></tr>'
+        })
+
+    var appabarrotes = new Vue({
+        el: '#appabarrotes',
+        data: {
+            comestibles: [
+                { codigo: 0, nombre: 'Vegetales', precio: "$120" },
+                { codigo: 1, nombre: 'Queso', precio: "$3000" },
+                { codigo: 2, nombre: 'Otra cosa', precio: "$5000" }
+            ]
+        }
+    })
+
+
+
+
+</script>
+
+</html>

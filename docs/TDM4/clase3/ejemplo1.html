@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    .rojo {
+        color: red;
+    }
+
+    .azul {
+        color: blue;
+    }
+
+</style>
+<body>
+    <div id="app">
+        <label>Nombre</label>
+        <input type="text" v-model="nombre"><br>
+        <label>Edad</label>
+        <input type="number" v-model="edad"><br>
+        <label>Ciudad</label>
+        <input type="text" v-model="ciudad"><br>
+        <label>Trabajo</label>
+        <input type="text" v-model="trabajo"><br>
+        <label>Escriba rojo o azul</label>
+        <input type="text" v-model="color"><br>
+        <select v-model="color">
+            <option v-for="color in colores" value="color.rojo">{{color.nombre}}</option>
+        </select>
+        <p v-if="nombre&&edad">Hola.</p>
+        <p v-if="nombre">Mi nombre es <span v-bind:class="color">{{nombre}}</span> y vivo en la ciudad de {{ciudad}}.</p>
+        <p v-if="edad>0">Mi edad es {{edad}}.</p>
+        <p v-if="trabajo">Y trabajo en {{trabajo}}.</p>
+    </div>
+</body>
+<script>
+    var app= new Vue(
+        {
+            el: "#app",
+            data: {
+                nombre: "",
+                ciudad: "",
+                trabajo: "",
+                edad: 0,
+                color: "",
+                colores: [
+                    {nombre: "Rojo", clase:"rojo"},
+                    {nombre: "Azul", clase: "azul" }
+                ]
+            }
+        }
+    )
+</script>
+</html>

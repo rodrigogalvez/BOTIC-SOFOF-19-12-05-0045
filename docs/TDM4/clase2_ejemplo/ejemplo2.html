@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="appejemplo">
+        <p v-bind:class="color">Cambio de color</p>
+    </div>
+</body>
+<style>
+    .rojo {
+        color: red;
+    }
+
+    .azul {
+        color: blue;
+    }
+
+    .verde {
+        color: green;
+    }
+</style>
+<script>
+    const appejemplo = new Vue(
+        {
+            el: "#appejemplo",
+            data: {
+                color: "rojo",
+                colores: ["azul", "rojo", "verde"],
+                indice: 0
+            },
+            methods: {
+                intervalo() {
+                    this.color = this.colores[this.indice];
+                        this.indice++;
+                        if (this.indice >= this.colores.length) {
+                            this.indice = 0;
+                        }
+                }
+            },
+            mounted() {
+                setInterval(
+                    this.intervalo,
+                    3000);
+            }
+        }
+    )
+    // var indice = 0;
+    // setInterval(
+    //     function () {
+    //         appejemplo.color = appejemplo.colores[indice];
+    //         indice++;
+    //         if (indice >= appejemplo.colores.length) {
+    //             indice = 0;
+    //         }
+    //     },
+    //     3000);
+
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="appejemplo">
+        <img v-bind:src="rutaimagen" v-bind:alt="altimagen">
+    </div>
+</body>
+<script>
+    var appejemplo = new Vue(
+        {
+            el: "#appejemplo",
+            data: {
+                rutaimagen: "Arte TD.png",
+                altimagen: "Obra de arte",
+                imagenes: [
+                    {
+                        rutaimagen: "Arte TD.png",
+                        altimagen: "Obra de arte"
+                    },
+                    {
+                        rutaimagen: "https://www.duoc.cl/wp-content/uploads/2020/07/textil-730x667.jpg",
+                        altimagen: "polera"
+                    }
+                ]
+            }
+        }
+    )
+    var indice = 0;
+    setInterval(
+        function () {
+            appejemplo.rutaimagen=appejemplo.imagenes[indice].rutaimagen;
+            appejemplo.altimagen=appejemplo.imagenes[indice].altimagen;
+            indice++;
+            if (indice>=appejemplo.imagenes.length) {
+                indice=0;
+            }
+        },
+        3000);
+</script>
+
+</html>

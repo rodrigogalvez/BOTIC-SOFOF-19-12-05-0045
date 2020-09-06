@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Ejemplos formularios</title>
+</head>
+
+<body>
+    <div id="app">
+        <form v-on:submit.prevent="agregar">
+            <label>Modelo</label><input type="text" v-model="modelo"><br>
+            <label>Kilómetros</label><input type="number" v-model.number="kilometros"><br>
+            <label>Colores</label>
+            <label><input type="checkbox" v-model="colores" value="rojo">Rojo</label>
+            <label><input type="checkbox" v-model="colores" value="azul">Azul</label>
+            <label><input type="checkbox" v-model="colores" value="gris">Gris</label>
+            <label><input type="checkbox" v-model="colores" value="blanco">Blanco</label>
+            <label><input type="checkbox" v-model="colores" value="negro">Negro</label><br>
+            <label>Transmisión</label>
+            <label>
+                <input type="radio" name="transmision" v-model="transmision" value="automático">Automático
+            </label>
+            <label>
+                <input type="radio" name="transmision" v-model="transmision" value="manual">Manual<br>
+            </label>
+            <label>Cantidad de pasajeros</label>
+            <select v-model="pasajeros">
+                <option value="1">1 pasajero</option>
+                <option value="4">4 pasajeros</option>
+                <option value="7">7 pasajeros</option>
+                <option value="11">11 pasajeros</option>
+            </select><br>
+            <p>{{modelo}}</p>
+            <p>{{kilometros}}</p>
+            <p>{{colores}}</p>
+            <p>{{transmision}}</p>
+            <p>{{pasajeros}}</p>
+        </form>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>

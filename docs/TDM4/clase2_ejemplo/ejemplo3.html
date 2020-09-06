@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1 v-bind:class="claseimagen">Curso de VueJS</h1>
+        <a v-bind:href="enlace" v-bind:class="claseimagen">Click ir a Google</a>
+        <img v-bind:src="urlimagen" v-bind:alt="altimagen" v-bind:class="claseimagen">
+    </div>
+</body>
+<style>
+    .clase1 {
+        border: solid 1px red;
+        width: 300px;
+    }
+</style>
+<script>
+    var myapp = new Vue(
+        {
+            el: "#app",
+            data: {
+                enlace: "http://www.google.cl",
+                urlimagen: "Arte TD.png",
+                altimagen: "Obra de arte",
+                claseimagen: "clase1"
+            }
+        }
+    )
+</script>
+</html>

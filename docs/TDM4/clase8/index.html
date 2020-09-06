@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Ejercicio clase 9</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1>Días favoritos</h1>
+        <h2>Elija al menos dos días</h2>
+        <label>Lunes<input type="checkbox" v-model="dias" value="Lunes"></label>
+        <label>Martes<input type="checkbox" v-model="dias" value="Martes"></label>
+        <label>Miércoles<input type="checkbox" v-model="dias" value="Miércoles"></label>
+        <label>Jueves<input type="checkbox" v-model="dias" value="Jueves"></label>
+        <label>Viernes<input type="checkbox" v-model="dias" value="Viernes"></label>
+        <label>Sábado<input type="checkbox" v-model="dias" value="Sábado"></label>
+        <label>Domingo<input type="checkbox" v-model="dias" value="Domingo"></label>
+
+        <p v-if="2>dias.length">Seleccione al menos dos días</p>
+
+        <h2>Días elegidos</h2>
+        <ul>
+            <li v-for="dia in dias">{{dia}}</li>
+        </ul>
+
+        <h2>Seleccione un idioma</h2>
+        <select v-model="idioma">
+            <option value="" disabled>Elija un idioma</option>
+            <option value="Español">Español</option>
+            <option value="Inglés">Inglés</option>
+            <option value="Alemán">Alemán</option>
+            <option value="Francés">Francés</option>
+        </select>
+        <p v-if="idioma">Bienvenido al idioma {{idioma}}</p>
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

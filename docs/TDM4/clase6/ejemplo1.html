@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Hoja de estilo de Bootstrap 4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!--
+        Íconos: Busca en Google "bootstrap 4 icons cdn" y revisa el resultado de W3Schools.
+        El resultado es este enlace:
+        https://www.w3schools.com/bootstrap4/bootstrap_icons.asp
+    -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <!-- Librerías de Bootstrap 4 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <!-- Librería de VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Ejercicios TD</title>
+</head>
+
+<body>
+    <div id="appsuma">
+        <div class="container">
+            <h1>Sumadora</h1>
+            <h2>Ingreso de números</h2>
+            <!-- 
+                Para que el formulario reaccione con ENTER, debe tener un 
+                v-on:submit.prevent
+                El modificador .prevent evita que el formulario se envíe al servidor.
+             -->
+            <form v-on:submit.prevent="agregar">
+                <div class="form-group">
+                    <label>Número</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text"><i class="fas fa-piggy-bank"></i></label>
+                        </div>
+                        <input type="number" class="form-control" v-model.number="numero">
+                        <div class="input-group-append">
+                            <!-- 
+                                La notación :disabled es igual que v-bind:disabled.
+                                La regla es !numero, lo que significa negar el número.
+                                Recuerde que el número 0 o una cadena vacía "" se evalúan como FALSE.
+                                Entonces si el número está vacío o es cero, !numero se evalúa como 
+                                TRUE (por la exclamación). Entonces, disabled=TRUE, y con eso no se puede usar el botón.
+                             -->
+                            <button type="button" class="btn btn-primary" v-on:click="agregar"
+                                :disabled="!numero">Agregar y sumar</button>
+                            <button type="button" class="btn btn-secondary" v-on:click="deshacer">Deshacer</button>
+                        </div>
+                    </div>
+                    <small class="form-text text-muted">Ingrese un número para sumar</small>
+                </div>
+            </form>
+            <h2>Resultado de la suma</h2>
+            <p>La suma es: {{suma}}</p>
+            <h2>Listado de números</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Número</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 
+                        La directiva v-for la hemos visto así:
+                        v-for="numero in listado"
+                        Pero si quiere mostrar el índice de la colección, debe 
+                        definir otra variable. Por ejemplo, indice. Esta nueva variable 
+                        no tiene relación con el modelo, así que no debe estar declarada
+                        allá.
+                        v-for="(numero, indice) in listado"
+                        Notar que indice parte en 0 para el primer elemento, por lo que
+                        tal vez deba sumar 1 para mostrarlo como 1.
+                     -->
+                    <tr v-for="(numero, indice) in listado">
+                        <th scope="row">{{indice+1}}</th>
+                        <td>{{numero}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="ejemplo1.js"></script>
+</body>
+
+</html>
