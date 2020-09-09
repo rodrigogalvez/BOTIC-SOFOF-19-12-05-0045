@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p v-for="disponible in disponibles">
+        <label v-bind:style="disponible.estilo">
+          <input
+            type="checkbox"
+            v-bind:value="disponible"
+            v-model="lenguajes"
+          />{{disponible.descripcion}}
+          <img v-bind:src="disponible.url" alt="" class="logo" />
+        </label>
+      </p>
+      <table>
+        <tbody>
+          <tr v-for="lenguaje in lenguajes">
+            <td>{{lenguaje.codigo}}</td>
+            <td v-bind:style="lenguaje.estilo">
+              {{lenguaje.descripcion}}
+            </td>
+            <td><img v-bind:src="lenguaje.url" alt="" class="logo" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>{{lenguajes.length}}</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

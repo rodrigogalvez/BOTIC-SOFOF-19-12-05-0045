@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <table width="100%" border="1">
+        <tr>
+          <td width="50%">
+              <label>Tamaño fuente</label>
+            <input type="range" min="8" max="24" v-model="tamano" /><br />
+            <label>Color texto</label>
+            <input type="color" v-model="color" /><br />
+            <label>Color fondo</label>
+            <input type="color" v-model="fondo" /><br />
+          </td>
+          <td>
+            <p
+              v-bind:style="{color: color, 'font-size': tamano+'px', 'background-color': fondo}"
+            >
+              Muestra
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          tamano: 8,
+          color: "",
+          fondo: "",
+        },
+      });
+    </script>
+  </body>
+</html>
