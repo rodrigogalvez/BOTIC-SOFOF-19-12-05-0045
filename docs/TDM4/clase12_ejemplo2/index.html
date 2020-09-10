@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="proyecto.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <proyecto nombre="Hombres" color="darkcyan"></proyecto>
+        <proyecto nombre="Mujeres" color="darkpink"></proyecto>
+        <proyecto v-bind:nombre="titulo" color="green"></proyecto> -->
+        <select v-model="formato">
+            <option value="chileno">Chile</option>
+            <option value="brasileno">Brasil</option>
+            <option value="oriental">Oriental</option>
+        </select>
+        <nombreformal
+            nombre="Rodrigo"
+            segundonombre="Eduardo"
+            apellidopaterno="Galvez"
+            apellidomaterno="Rojas"
+            v-bind:formato="formato"
+        ></nombreformal>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
