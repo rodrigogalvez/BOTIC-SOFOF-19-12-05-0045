@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>BootstrapVue</title>
+    <!-- Inclusión de VueJS y BootstrapVue -->
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css" />
+    <link rel="stylesheet" href="index.css">
+    <!-- Adaptaciones para navegadores no compatibles -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"></script>
+    <!-- Documentación de BootstrapVue: https://bootstrap-vue.org/docs/components -->
+    <script src="https://unpkg.com/vue@latest/dist/vue.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+</head>
+
+<body>
+    <template id="templatenota">
+        <b-card v-bind:title="titulo" class="nota">
+            <b-card-text>
+                <b-form-textarea v-if="editando" v-model="parametronota.contenido" placeholder="Nueva nota..." rows="3"
+                    v-on:blur="mostrar">
+                </b-form-textarea>
+                <pre v-else @click="editar">{{parametronota.contenido||"Nota vacía"}}</pre>
+            </b-card-text>
+            <b-button variant="light" @click="eliminar">Eliminar</b-button>
+        </b-card>
+    </template>
+
+    <div id="app">
+        <b-container fluid>
+            <b-button variant="primary" @click="agregarnota">Agregar</b-button>
+        </b-container>
+        <b-container fluid>
+            <componentenota v-for="nota in notas" v-bind:parametronota="nota" v-if="!nota.eliminada"></componentenota>
+        </b-container>
+        <h1>Estado de las notas</h1>
+        <b-container fluid>
+            <p v-for="nota in notas">{{nota.identificador}} - {{nota.contenido}} -
+                {{nota.eliminada?"borrada":"vigente"}}</p>
+        </b-container>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

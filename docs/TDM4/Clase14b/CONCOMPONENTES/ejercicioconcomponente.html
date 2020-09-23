@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- <template id="notaactiva">
+        
+    </template> -->
+
+    <div id="app">
+
+        <textarea cols="30" rows="10" ref="textoglobal"></textarea>
+
+        <button type="button" v-on:click="agregarNota()">Agregar nota</button>
+        <h1>Notas vigentes</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Índice</th>
+                    <th>Texto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(nota,indice) in notas"
+                    is="notaactiva"
+                    v-bind:nota="nota"
+                    v-bind:indice="indice" 
+                    v-if="nota.estado=='activo'"
+                >
+                </tr>
+
+                <!-- <notaactiva v-for="(nota,indice) in notas"
+                    v-bind:nota="nota"
+                    v-bind:indice="indice" 
+                    v-if="nota.estado=='activo'"
+                >
+                </notaactiva> -->
+            </tbody>
+        </table>
+        <h1>Notas borradas</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Índice</th>
+                    <th>Texto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(nota,indice) in notas"
+                    is="notaactiva"
+                    v-bind:nota="nota"
+                    v-bind:indice="indice" 
+                    v-if="nota.estado=='borrado'"
+                >
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="ejercicioconcomponente.js"></script>
+</body>
+
+</html>

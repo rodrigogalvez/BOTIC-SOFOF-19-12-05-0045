@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="appPersonas">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Correlativo
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Edad
+                    </th>
+                    <th>
+                        Acciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(persona,indice) in personas">
+                    <th>
+                        {{indice+1}}
+                    </th>
+                    <td v-if="!(modoEdicion&&filaEditada==indice)">
+                        {{persona.nombre}}
+                    </td>
+                    <td v-else>
+                        <input type="text" v-model="nombreEditado">
+                    </td>
+                    <td v-if="!(modoEdicion&&filaEditada==indice)">
+                        {{persona.edad}}
+                    </td>
+                    <td v-else>
+                        <input type="number" v-model.number="edadEditado">
+                    </td>
+                    <td v-if="!(modoEdicion&&filaEditada==indice)">
+                        <button type="button" @click="activarActualizarPersona(indice)">Editar</button>
+                        <button type="button" @click="borrarPersona(indice)">Borrar</button>
+                    </td>
+                    <td v-else>
+                        <button type="button" @click="guardarPersona(indice)">Guardar</button>
+                        <button type="button" @click="cancelarEdicion()">Cancelar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" @click="crearPersona()">Crear persona</button>
+    </div>
+    <script src="prueba2.js"></script>
+</body>
+
+</html>

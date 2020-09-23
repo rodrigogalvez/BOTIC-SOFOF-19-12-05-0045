@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Responsibe tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+    <!-- Load polyfills to support older browsers -->
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"
+        crossorigin="anonymous"></script>
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="//unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+    <title>Ejercicio sin componentes</title>
+</head>
+
+<body>
+    <div id="app">
+        <b-container>
+            <b-button v-on:click="agregarComentario">Agrear comentario</b-button>
+            <h1>Notas vigentes</h1>
+            <b-table-simple hover small caption-top responsive>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <b-thead head-variant="dark">
+                    <b-tr>
+                        <b-th colspan="1">Código</b-th>
+                        <b-th colspan="9">Comentario</b-th>
+                        <b-th colspan="1">Estado</b-th>
+                        <b-th colspan="1">Acciones</b-th>
+                    </b-tr>
+                </b-thead>
+                <b-tbody>
+                    <b-tr v-for="comentario in comentarios" v-if="comentario.estado=='vigente'">
+                        <b-th colspan="1">{{comentario.id}}</b-th>
+                        <b-td colspan="9"><b-form-textarea
+                            v-model="comentario.texto"
+                            placeholder="nuevo comentario"
+                            rows="2"
+                          ></b-form-textarea></b-td>
+                        <b-td colspan="1">{{comentario.estado}}</b-td>
+                        <b-td colspan="1">
+                            <b-button v-on:click="borrarComentario(comentario.id)">Borrar</b-button>
+                        </b-td>
+                    </b-tr>
+                </b-tbody>
+            </b-table-simple>
+            <H1>Notas borradas</H1>
+            <b-table-simple hover small caption-top responsive>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <colgroup><col></colgroup>
+                <b-thead head-variant="dark">
+                    <b-tr>
+                        <b-th colspan="1">Código</b-th>
+                        <b-th colspan="9">Comentario</b-th>
+                        <b-th colspan="1">Estado</b-th>
+                        <b-th colspan="1">Acciones</b-th>
+                    </b-tr>
+                </b-thead>
+                <b-tbody>
+                    <b-tr v-for="comentario in comentarios" v-if="comentario.estado=='borrado'">
+                        <b-th colspan="1">{{comentario.id}}</b-th>
+                        <b-td colspan="9">{{comentario.texto}}</b-td>
+                        <b-td colspan="1">{{comentario.estado}}</b-td>
+                        <b-td colspan="1">
+                            <b-button v-on:click="recuperarComentario(comentario.id)">Recuperar</b-button>
+                        </b-td>
+                    </b-tr>
+                </b-tbody>
+            </b-table-simple>
+        </b-container>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

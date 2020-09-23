@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- Template -->
+    <template id="logintemplate">
+        <div>
+            <h1>
+                <slot></slot>
+            </h1>
+            <label>Usuario:</label>
+            <input type="text" v-model="usuario">
+            <label>Clave:</label>
+            <input type="password" v-model="clave">
+            <button>Confirmar</button>
+        </div>
+    </template>
+
+    <!-- Aplicación -->
+    <div id="app">
+        <login>Formulario de ingreso</login>
+    </div>
+
+    <script src="ejerciciologin.js"></script>
+
+</body>
+
+</html>

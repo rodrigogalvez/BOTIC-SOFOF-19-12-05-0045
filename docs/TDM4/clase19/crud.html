@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="crud.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="appPersonas">
+            <table class="table table-bordered">
+                <colgroup>
+                    <col class="w-25">
+                    <col class="w-50">
+                    <col class="w-25">
+                </colgroup>
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">
+                            Correlativo
+                        </th>
+                        <th scope="col">
+                            Nombre y edad
+                        </th>
+                        <th scope="col">
+                            Acciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(persona,indice) in personas">
+                        <th scope="row">
+                            {{indice+1}}
+                        </th>
+                        <td>
+                            <transition name="fade" mode="out-in">
+                                <div v-if="!(modoEdicion&&filaEditada==indice)" key="visualizar">
+                                    <p class="text-justify w-100 mb-0">
+                                        {{persona.nombre||"nuevo..."}} ({{persona.edad||"sin edad"}})</p>
+                                </div>
+                                <form class="form-inline" v-else key="editar">
+                                    <input type="text" class="form-control w-75" v-model="nombreEditado"
+                                        placeholder="Nombre">
+                                    <input type="number" class="form-control w-25" v-model.number="edadEditado"
+                                        placeholder="Edad">
+                                </form>
+                            </transition>
+                        </td>
+                        <td>
+                            <transition name="fade" mode="out-in">
+                                <div v-if="!(modoEdicion&&filaEditada==indice)" key="visualizar">
+                                    <button type="button" class="btn btn-primary"
+                                        @click="activarActualizarPersona(indice)">Editar</button>
+                                    <button type="button" class="btn btn-danger"
+                                        @click="borrarPersona(indice)">Borrar</button>
+                                </div>
+                                <div v-else key="editar">
+                                    <button type="button" class="btn btn-success"
+                                        @click="guardarPersona(indice)">Guardar</button>
+                                    <button type="button" class="btn btn-warning"
+                                        @click="cancelarEdicion()">Cancelar</button>
+                                </div>
+                            </transition>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" @click="crearPersona()">Crear persona</button>
+        </div>
+    </div>
+
+    <script src="crud.js"></script>
+</body>
+
+</html>

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -16,6 +16,7 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <link rel="stylesheet" href="index.css">
     <title>Cafetería</title>
 </head>
@@ -23,59 +24,59 @@
 <body>
     <div id="app">
         <div class="container">
-            <h1>La Cafetería</h1>
+            <h1>Cafetería</h1>
             <h2>Productos en stock</h2>
-
             <table class="table">
                 <thead class="thead-light">
                     <th scope="col">Nombre</th>
                     <th scope="col">Precio</th>
                 </thead>
                 <tbody>
-                    <tr v-for="(producto,indice) in productos">
+                    <tr v-for="producto in productos">
                         <th scope="row">
-                            <label class="width100">
+                            <label>
                                 <input type="radio" name="productos" v-model="seleccion" v-bind:value="producto">
                                 {{producto.nombre}}
                             </label>
                         </th>
-                        <td>{{producto.precio}}</td>
+                        <td>
+                            {{producto.precio}}
+                        </td>
                     </tr>
                 </tbody>
             </table>
-            <h2>Fotografía</h2>
-            <div class="mx-auto centrado300px">
-                <figure class="figure centrado300px alto300px">
-                    <img v-bind:src="seleccion.imagen" width="300px" class="mx-auto">
-                    <figcaption class="figure-caption">Ir a la imagen: <a v-bind:href="seleccion.url">Ir a
-                            {{seleccion.nombre}}</a></figcaption>
-                </figure>
+            <div v-if="seleccion">
+                <h2>Fotografía</h2>
+                <img v-bind:src="seleccion.imagen" alt="" class="altoimagen">
+                Ir a la imagen <a v-bind:href="seleccion.url">Ir a {{seleccion.nombre}}</a>
+                <button v-on:click="agregarAlCarro" class="btn btn-primary centrado300px">Agergar al carro</button>
             </div>
-            <div class="mx-auto centrado300px">
-                <button v-on:click="agregrarAlCarro" :disabled="!seleccion" type="button"
-                    class="btn btn-primary centrado300px">Agregar al carro</button>
-            </div>
-
             <h2>Carro de compras</h2>
-            <p>Cantidad de productos en el carro: {{carro.length}}</p>
+            <p>Cantidad de productos en el carro: {{    carro.length    }}</p>
+
             <table class="table">
                 <thead class="thead-light">
-                    <th cope="col">Número</th>
-                    <th cope="col">Nombre</th>
-                    <th cope="col">Precio</th>
+                    <th scope="col">Número</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
                 </thead>
                 <tbody>
                     <tr v-for="(producto,indice) in carro">
                         <th scope="row">
                             {{indice+1}}
                         </th>
-                        <td>{{producto.nombre}}</td>
-                        <td>{{producto.precio}}</td>
+                        <td> {{producto.nombre}}
+                        </td>
+                        <td>
+                            {{producto.precio}}
+                        </td>
                     </tr>
                 </tbody>
             </table>
+
         </div>
     </div>
+
     <script src="index.js"></script>
 </body>
 

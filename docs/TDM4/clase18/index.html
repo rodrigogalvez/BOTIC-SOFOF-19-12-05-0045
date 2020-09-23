@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="appPersonas" class="container">
+        <!-- Formulario para agregar Personas -->
+        <section class="form">
+            <form action="" class="text-center">
+                <input v-model="nombre" @keyup.enter="crearPersonas" type="text" class="form-control"
+                    placeholder="Nombre">
+                <input v-model="edad" @keyup.enter="crearPersonas" type="number" name="edad" placeholder="Edad"
+                    class="form-control">
+                <!-- Botón para agregar personas -->
+                <input @click="crearPersonas" type="button" value="Ingresar" class="btn btn-success">
+            </form>
+        </section>
+        <!-- Tabla donde se listan los datos -->
+        <section class="data">
+            <caption>Personas</caption>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Edad</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(persona, index) in personas">
+                        <td>{{ persona.id }}</td>
+                        <td>
+                            <span v-if="formActualizar && idActualizar == index">
+                                <!-- Formulario para actualizar -->
+                                <input v-model="nombreActualizar" type="text" class="form-control">
+                            </span>
+
+                            <span v-else>
+                                <!-- Dato nombre -->
+                                {{ persona.nombre }}
+                            </span>
+                        </td>
+                        <td>
+                            <span v-if="formActualizar && idActualizar == index">
+                                <!-- Formulario para actualizar -->
+                                <input v-model="edadActualizar" type="text" class="form-control">
+                            </span>
+                            <span v-else>
+                                <!-- Dato edad -->
+                                {{ persona.edad }}
+                            </span>
+                        </td>
+                        <td>
+                            <!-- Botón para guardar la información actualizada -->
+                            <span v-if="formActualizar && idActualizar == index">
+                                <button @click="guardarActualizacion(index)" class="btn btn-success">Guardar</button>
+                            </span>
+                            <span v-else>
+                                <!-- Botón para mostrar el formulario de actualizar -->
+                                <button @click="verFormActualizar(index)" class="btn btn-warning">Actualizar</button>
+                                <!-- Botón para borrar -->
+                                <button @click="borrarPersona(index)" class="btn btn-danger">Borrar</button>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <script>
+        var app;
+        document.addEventListener('DOMContentLoaded', function () {
+            app = new Vue({
+                el: '#appPersonas',
+                data: {
+                    // Input nombre
+                    nombre: '',
+                    // Input edad
+                    edad: '',
+                    // Visualizar  el formulario de actualizar
+                    formActualizar: false,
+                    // La posición de tu lista donde te gustaría actualizar 
+                    idActualizar: -1,
+                    // Input nombre dentro del formulario de actualizar
+                    nombreActualizar: '',
+                    // Input edad dentro del formulario de actualizar
+                    edadActualizar: '',
+                    // Lista de personas
+                    personas: []
+                },
+                methods: {
+                    crearPersonas: function () {
+                        // Agregar a nuestra lista
+                        this.personas.push({
+                            id: + new Date(),
+                            nombre: this.nombre,
+                            edad: this.edad
+                        });
+                        // Vaciamos el formulario de añadir
+                        this.nombre = '';
+                        this.edad = '';
+                    },
+                    verFormActualizar: function (paciente_id) {
+                        // Antes de listar el formulario de actualizar, rellenamos sus campos
+                        this.idActualizar = paciente_id;
+                        this.nombreActualizar = this.personas[paciente_id].nombre;
+                        this.edadActualizar = this.personas[paciente_id].edad;
+                        // Mostramos el formulario
+                        this.formActualizar = true;
+                    },
+                    borrarPersona: function (paciente_id) {
+                        // Borramos de la lista
+                        this.personas.splice(paciente_id, 1);
+                    },
+                    guardarActualizacion: function (paciente_id) {
+                        // Ocultamos nuestro formulario de actualizar
+                        this.formActualizar = false;
+                        // Actualizamos los datos
+                        this.personas[paciente_id].nombre = this.nombreActualizar;
+                        this.personas[paciente_id].edad = this.edadActualizar;
+                    }
+                }
+            });
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

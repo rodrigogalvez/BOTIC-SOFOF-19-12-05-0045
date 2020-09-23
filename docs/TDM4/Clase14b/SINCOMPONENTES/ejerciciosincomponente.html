@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button type="button" v-on:click="agregarNota()">Agregar nota</button>
+        <h1>Notas vigentes</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Índice</th>
+                    <th>Texto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(nota,indice) in notas"  v-if="nota.estado=='activo'">
+                    <td>{{indice+1}}</td>
+                    <td><textarea rows="2" v-model="nota.texto"></textarea></td>
+                    <td>{{nota.estado}}</td>
+                    <td><button type="button" v-on:click="borrarNota(indice)">Borrar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>Notas borradas</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Índice</th>
+                    <th>Texto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(nota,indice) in notas" v-if="nota.estado=='borrado'">
+                    <td>{{indice+1}}</td>
+                    <td><pre>{{nota.texto}}</pre></td>
+                    <td>{{nota.estado}}</td>
+                    <td><button type="button" v-on:click="recuperarNota(indice)">Recuperar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="ejerciciosincomponente.js"></script>
+</body>
+
+</html>

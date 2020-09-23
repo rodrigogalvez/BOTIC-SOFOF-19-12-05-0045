@@ -1,0 +1,12 @@
+Ejercicio SIN componentes:
+
+Crear una aplicación que permita agregar varias filas a una tabla con un botón y que cada fila tenga al menos un texto editable.
+Además: un botón por cada fila para **marcar la fila como borrada** y que no la dibuje.
+
+Pistas: 
+Use una aplicación con una colección.
+Cada elemento de la colección debe tener el texto editable y un identificador (que por ahora no lo usaremos) y un estado que marque si está borrada o no.
+Para borrar la fila: el estado se marca como borrado y un v-if permite mostrar o no la fila borrada.
+Además para mostrar el contenido de la tabla, usará v-for.
+
+Puede usar: Bootstrap 4/5 o BootstrapVue.

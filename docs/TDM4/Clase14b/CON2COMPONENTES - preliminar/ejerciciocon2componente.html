@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <template id="templatetabla">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Índice</th>
+                    <th>Texto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(nota,indice) in notas"
+                    is="notaactiva"
+                    v-bind:nota="nota"
+                    v-bind:indice="indice" 
+                    v-if="nota.estado==estado"
+                >
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+    <div id="app">
+
+        <textarea cols="30" rows="10" ref="textoglobal"></textarea>
+
+        <button type="button" v-on:click="agregarNota()">Agregar nota</button>
+        <h1>Notas vigentes</h1>
+        <tablanotas v-bind:notas="notas" estado='activo'></tablanotas>
+        <h1>Notas borradas</h1>
+        <tablanotas v-bind:notas="notas" estado='borrado'></tablanotas>
+    </div>
+    <script src="ejerciciocon2componente.js"></script>
+</body>
+
+</html>
