@@ -1,0 +1,13 @@
+.imagentamano{
+    height: 100px;
+    width: 100px;
+    object-fit:contain;
+}
+
+.marcorojo {
+    border: solid 1px red;
+}
+
+.marcoazul {
+    border: solid 1px blue;
+}
