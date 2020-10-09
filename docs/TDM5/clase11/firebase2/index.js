@@ -29,7 +29,7 @@ var app = new Vue({
             })
         firebasecompras.on('child_removed',
             (snapshot) => {
-
+                console.log("remover", snapshot.key)
                 let index = this.compras.findIndex(
                     (compra) => compra.id == snapshot.key
                 );
@@ -40,6 +40,7 @@ var app = new Vue({
             firebasecompras.on('child_changed',
             (snapshot) => {
                 let data= snapshot.toJSON();
+                console.log("modificar", snapshot.key,data)
                 let compra = this.compras.find(
                     (compra) => compra.id == snapshot.key
                 );
