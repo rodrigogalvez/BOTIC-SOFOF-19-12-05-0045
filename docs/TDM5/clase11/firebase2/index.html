@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+
+    <div id="app">
+        <ul>
+            <li v-for="compra in compras">
+                Producto: <input type="text" v-model="compra.nombre">,
+                Cantidad: <input type="number" v-model.number="compra.cantidad">
+                <button @click="modificar(compra)">M</button>
+                <button @click="eliminar(compra)">E</button>
+            </li>
+        </ul>
+        <div>
+            Producto: <input type="text" v-model="nombre">,
+            Cantidad: <input type="number" v-model.number="cantidad">
+            <button @click="agregar()">A</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

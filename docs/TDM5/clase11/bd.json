@@ -1,0 +1,12 @@
+{
+    "compras": [
+        {
+            "cantidad": 2,
+            "nombre": "arroz"
+        },
+        {
+            "cantidad": 3,
+            "nombre": "Bebidas"
+        }
+    ]
+}
