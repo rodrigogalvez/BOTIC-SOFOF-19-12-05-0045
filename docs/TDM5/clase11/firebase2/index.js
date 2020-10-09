@@ -18,15 +18,38 @@ var app = new Vue({
         nombre: "",
         cantidad: 0
     },
-    mounted(){
-        firebasecompras.orderByKey()
-        .on('child_added',
-            (snapshot)=>{
-                let data=snapshot.toJSON();
-                data.id=snapshot.key;
+    mounted() {
+        firebasecompras.orderByKey();
+        firebasecompras.on('child_added',
+            (snapshot) => {
+                let data = snapshot.toJSON();
+                data.id = snapshot.key;
                 console.log(data)
                 this.compras.push(data);
             })
+        firebasecompras.on('child_removed',
+            (snapshot) => {
+
+                let index = this.compras.findIndex(
+                    (compra) => compra.id == snapshot.key
+                );
+                if (index >= 0) {
+                    this.compras.splice(index, 1);
+                }
+            })
+            firebasecompras.on('child_changed',
+            (snapshot) => {
+                let data= snapshot.toJSON();
+                let compra = this.compras.find(
+                    (compra) => compra.id == snapshot.key
+                );
+                if (compra) {
+                    compra.nombre=data.nombre;
+                    compra.cantidad= data.cantidad;
+                }
+            })
+
+
     },
     methods: {
         agregar() {
@@ -40,9 +63,9 @@ var app = new Vue({
                     nombre: this.nombre,
                     cantidad: this.cantidad
                 },
-                (error) =>{
+                (error) => {
                     if (error) {
-                        console.log("error",error);
+                        console.log("error", error);
                     } else {
                         console.log("ok");
                     }
@@ -62,9 +85,9 @@ var app = new Vue({
                         nombre: compramodificada.nombre,
                         cantidad: compramodificada.cantidad
                     },
-                    (error) =>{
+                    (error) => {
                         if (error) {
-                            console.log("error",error);
+                            console.log("error", error);
                         } else {
                             console.log("ok");
                         }
@@ -82,9 +105,9 @@ var app = new Vue({
 
             firebasecompras.child(compraaeliminar.id)
                 .remove(
-                    (error) =>{
+                    (error) => {
                         if (error) {
-                            console.log("error",error);
+                            console.log("error", error);
                         } else {
                             console.log("ok");
                         }
