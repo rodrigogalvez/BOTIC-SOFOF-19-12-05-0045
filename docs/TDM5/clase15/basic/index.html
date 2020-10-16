@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="salida"></div>
+    <input id="entrada" type="text" oninput="cambiar()">
+
+    <script>
+        var producto1 = {
+            nombre: "Lápiz",
+            cantidad: 10
+        }
+
+        var producto2 = {}
+
+        var salida = document.getElementById("salida")
+
+
+
+        function crearPropiedad(Objeto, Propiedad) {
+            let valor = undefined;
+            Object.defineProperty(Objeto, Propiedad,
+                {
+                    get() {
+
+                        salida.append(document.createTextNode("valor actual de "+Propiedad+ " = " + valor));
+                        salida.append(document.createElement("br"));
+                        return valor;
+
+                    },
+                    set(nuevoValor) {
+                        salida.append(document.createTextNode("valor anterior de " + Propiedad+" = " + valor));
+                        salida.append(document.createElement("br"));
+                        salida.append(document.createTextNode("valor nuevo de " + Propiedad+" = " + nuevoValor));
+                        salida.append(document.createElement("br"));
+                        valor = nuevoValor;
+                    },
+                    enumerable: true,
+                    configurable: true
+                }
+            )
+        }
+
+        function cambiar() {
+            producto2.nombre = document.getElementById("entrada").value;
+        }
+
+        function escribir(datos) {
+            salida.append(document.createTextNode(datos));
+            salida.append(document.createElement("br"));
+        }
+
+        crearPropiedad(producto2, "nombre");
+        crearPropiedad(producto2, "cantidad");
+
+        producto2.nombre = "Peras";
+
+        escribir(producto1.nombre);
+        escribir(producto2.nombre);
+
+        producto2.nombre = "Manzanas";
+
+        escribir(producto1.nombre);
+        escribir(producto2.nombre);
+
+
+    </script>
+
+</body>
+
+</html>

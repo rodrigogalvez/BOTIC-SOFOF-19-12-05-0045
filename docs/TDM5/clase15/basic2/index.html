@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="salida"></div>
+    <input id="nombre" type="text" oninput="cambiar('nombre')">
+    <input id="cantidad" type="text" oninput="cambiar('cantidad')">
+    <script>
+        var salida = document.getElementById("salida");
+
+        var producto={
+            nombre: "lapices",
+            cantidad: 10
+        }
+
+        function crearPropiedad(ObjetoOriginal, Propiedad, ValorInicial) {
+            let valor=ValorInicial;
+            Object.defineProperty(ObjetoOriginal, Propiedad,
+            {
+                get() {
+                    // escribir(["Valor actual de", Propiedad,"=", valor].join(" "));
+                    return valor;
+                },
+                set(nuevoValor) {
+                    // escribir(["El valor anterior de", Propiedad,"era", valor].join(" "));
+                    valor = nuevoValor;
+                    document.getElementById(Propiedad).value= valor;
+                    // escribir(["El valor nuevo de", Propiedad,"es", valor].join(" "));
+                },
+                enumerable:true,
+                configurable:true
+            });
+        }
+
+        for (var p in producto) {
+            crearPropiedad(producto, p, producto[p]);
+        }
+
+        // producto.cantidad="45"
+
+        function escribir(datos) {
+            salida.append(document.createTextNode(datos));
+            salida.append(document.createElement("br"));
+        }
+
+        function cambiar(Propiedad) {
+            console.log(document.getElementById(Propiedad).value);
+            producto[Propiedad] = document.getElementById(Propiedad).value;
+        }
+
+    </script>
+
+
+</body>
+</html>

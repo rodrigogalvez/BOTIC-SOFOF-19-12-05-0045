@@ -1,0 +1,36 @@
+<template>
+  <div id="app">
+    <b-container>
+      <img alt="Vue logo" src="./assets/logo.png" width="25%" />
+      <!-- <HelloWorld msg="Hello Vue in CodeSandbox!" /> -->
+      <!-- <Compras></Compras> -->
+      <pruebaapi></pruebaapi>
+    </b-container>
+  </div>
+</template>
+
+<script>
+// import HelloWorld from "./components/HelloWorld";
+// import Compras from "./components/Compras.vue";
+import pruebaapi from "./components/pruebaapi.vue";
+
+export default {
+  name: "App",
+  components: {
+    // HelloWorld,
+    // Compras,
+    pruebaapi,
+  },
+};
+</script>
+
+<style>
+/* #app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+} */
+</style>

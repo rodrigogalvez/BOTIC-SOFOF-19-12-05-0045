@@ -24,8 +24,12 @@ var app = new Vue({
             (snapshot) => {
                 let data = snapshot.toJSON();
                 data.id = snapshot.key;
+                if (!("borrado" in data))
+                    data.borrado=false;
+                
                 console.log(data)
-                this.compras.push(data);
+                if (!data.borrado)
+                    this.compras.push(data);
             })
         firebasecompras.on('child_removed',
             (snapshot) => {
@@ -37,16 +41,22 @@ var app = new Vue({
                     this.compras.splice(index, 1);
                 }
             })
-            firebasecompras.on('child_changed',
+        firebasecompras.on('child_changed',
             (snapshot) => {
-                let data= snapshot.toJSON();
-                console.log("modificar", snapshot.key,data)
+                let data = snapshot.toJSON();
+                console.log("modificar", snapshot.key, data)
                 let compra = this.compras.find(
                     (compra) => compra.id == snapshot.key
                 );
                 if (compra) {
-                    compra.nombre=data.nombre;
-                    compra.cantidad= data.cantidad;
+                    compra.nombre = data.nombre;
+                    compra.cantidad = data.cantidad;
+                } else {
+                    this.compras.push({
+                        nombre: data.nombre,
+                        cantidad: data.cantidad,
+                        borrado: false
+                    })
                 }
             })
 
@@ -62,7 +72,8 @@ var app = new Vue({
             firebasecompras.push(
                 {
                     nombre: this.nombre,
-                    cantidad: this.cantidad
+                    cantidad: this.cantidad,
+                    borrado: false
                 },
                 (error) => {
                     if (error) {
@@ -84,7 +95,8 @@ var app = new Vue({
                 .set(
                     {
                         nombre: compramodificada.nombre,
-                        cantidad: compramodificada.cantidad
+                        cantidad: compramodificada.cantidad,
+                        borrado: false
                     },
                     (error) => {
                         if (error) {
@@ -104,13 +116,35 @@ var app = new Vue({
             //     this.compras.splice(index, 1);
             // }
 
+            // firebasecompras.child(compraaeliminar.id)
+            //     .remove(
+            //         (error) => {
+            //             if (error) {
+            //                 console.log("error", error);
+            //             } else {
+            //                 console.log("ok");
+            //             }
+            //         }
+            //     )
             firebasecompras.child(compraaeliminar.id)
-                .remove(
+                .set(
+                    {
+                        nombre: compraaeliminar.nombre,
+                        cantidad: compraaeliminar.cantidad,
+                        borrado: true
+                    },
                     (error) => {
                         if (error) {
                             console.log("error", error);
                         } else {
                             console.log("ok");
+                            let compra = this.compras.find(
+                                (compra)=> compra.id==compraaeliminar.id
+                            )
+                            if (compra) {
+                                compra.borrado=true;
+                            }
+ 
                         }
                     }
                 )

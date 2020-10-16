@@ -1,0 +1,47 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": { "title": "Mr", "first": "Phillip", "last": "Chavez" },
+      "location": {
+        "street": { "number": 9522, "name": "Marsh Ln" },
+        "city": "Adelaide",
+        "state": "New South Wales",
+        "country": "Australia",
+        "postcode": 7442,
+        "coordinates": { "latitude": "-81.8677", "longitude": "-0.9222" },
+        "timezone": {
+          "offset": "+6:00",
+          "description": "Almaty, Dhaka, Colombo"
+        }
+      },
+      "email": "phillip.chavez@example.com",
+      "login": {
+        "uuid": "c2cf702d-1156-4858-bff3-b4e12d0b3cd4",
+        "username": "yellowduck742",
+        "password": "vince",
+        "salt": "fetzIuHl",
+        "md5": "5e635c89a651a9a7a53924eb8a1b63ae",
+        "sha1": "5a4720c25d180662c2ebd9bcf6d9697863000da0",
+        "sha256": "ad07b2c8c50b11ec4595554a76f9c6b83ba7b799944d4cc2205fbeedefe2144d"
+      },
+      "dob": { "date": "1959-10-26T18:52:45.480Z", "age": 61 },
+      "registered": { "date": "2018-05-02T01:15:29.800Z", "age": 2 },
+      "phone": "01-8071-7821",
+      "cell": "0465-892-212",
+      "id": { "name": "TFN", "value": "339884868" },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/9.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/9.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/9.jpg"
+      },
+      "nat": "AU"
+    }
+  ],
+  "info": {
+    "seed": "6189841b53a05067",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}

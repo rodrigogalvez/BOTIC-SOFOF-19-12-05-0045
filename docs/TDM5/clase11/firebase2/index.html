@@ -13,9 +13,10 @@
 
     <div id="app">
         <ul>
-            <li v-for="compra in compras">
+            <li v-for="compra in compras" v-if="!compra.borrado">
                 Producto: <input type="text" v-model="compra.nombre">,
                 Cantidad: <input type="number" v-model.number="compra.cantidad">
+                Borrado: {{ compra.borrado}}
                 <button @click="modificar(compra)">M</button>
                 <button @click="eliminar(compra)">E</button>
             </li>
