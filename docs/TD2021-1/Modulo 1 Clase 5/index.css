@@ -1,0 +1,27 @@
+* {
+    background-color: steelblue;
+}
+
+
+.hola {
+    background-color: teal;
+    font-size: 100px;
+    color: blue;
+}
+
+.hola {
+    color: red;
+}
+
+ul li a {
+    font-size: 70px;
+    color: salmon;
+}
+
+a {
+    color: green;
+}
+
+.enlace {
+    color: silver
+}

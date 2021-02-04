@@ -1,0 +1,5 @@
+.azul > div > div {
+    background-color: blue;
+    color: white;
+    border: 1px solid darkblue
+}

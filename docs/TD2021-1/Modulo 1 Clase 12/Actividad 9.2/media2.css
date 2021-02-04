@@ -1,0 +1,77 @@
+.azul, .verde, .naranjo1, .naranjo2 {
+    box-sizing: border-box;
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque div {
+    border: 1px solid lightslategray;
+    padding: 20px;
+    font-weight: bolder;
+    color: white;
+    }
+
+.azul {
+    background-color: lightblue;
+}
+
+.naranjo1, .naranjo2  {
+    background: lightsalmon;
+}
+
+
+.verde {
+    background-color: lightseagreen;
+}
+
+@media (max-width: 399px) {
+   
+}
+
+@media (min-width: 400px) and (max-width: 700px) {
+
+    div.azul {
+        width: 50%;
+        float: left;
+    }
+
+    .naranjo1 {
+        width: 100%;
+        float: left;
+        }
+    
+    .naranjo2 {
+        width: 100%;
+        float: left;
+        }
+
+    div.verde {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (min-width: 701px) {
+
+    div.azul {
+        width: 50%;
+        float: left;
+    }
+    
+    .naranjo1 {
+        width: 50%;
+        display: inline-block;     
+    }
+
+    .naranjo2 {
+        width: 100%;
+        float: left;
+    }
+    
+    .verde {
+        width: 50%;
+        float: left;
+    }
+}

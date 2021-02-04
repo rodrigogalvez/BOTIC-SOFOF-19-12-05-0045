@@ -1,0 +1,9 @@
+.fotoredonda {
+    width:100px;
+    border-radius: 10px;
+}
+
+.rojo {
+    color: red;
+    font-style: italic;
+}

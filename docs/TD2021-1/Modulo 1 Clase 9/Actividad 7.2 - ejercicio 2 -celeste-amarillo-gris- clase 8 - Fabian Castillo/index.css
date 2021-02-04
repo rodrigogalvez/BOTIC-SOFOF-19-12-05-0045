@@ -1,0 +1,93 @@
+ 
+/* 
+    --sandia:#ED1164;
+    --morado:#86328C;
+    --celeste:#0083CA;
+    --naranja:#e69a21;
+    --verde:#22aa3f;
+*/
+ 
+ :root {
+    --sandia:#ED1164;
+    --morado:#86328C;
+    --celeste:#0083CA;
+    --naranja:#e69a21;
+    --verde:#22aa3f;
+    --amarillo:#f0ec08;
+    --gris:#9baf9f;
+  }
+
+  /* Alineación específica dentro del FlexBoxGrid para cada celda */
+  div.row > div > div{
+      text-align: center;
+  }
+
+ /* No es necesario esto */ 
+   /* .alinearderecha { 
+    justify-content: right; 
+}   */
+
+/* Tampoco es necesario */
+   /* .alinearizquierda  { 
+    justify-content: left;
+}   */
+ 
+/* no se usa en tu código */
+/* .centraritem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   */
+
+/* s1, s2 y s3, muy bien!! */
+.s1{
+    background-color:var(--celeste);
+    height: 5ch;
+}
+
+.s2{
+    background-color:var(--amarillo);
+    height: 5ch;
+}
+
+.s3{
+    background-color:var(--gris);
+    height: 5ch;
+}
+
+/* esto da el margen de las celdas, muy bien!! */
+.margencero{
+    border-style:solid;
+    border-width: 1px;
+
+    margin-left: 0px;
+    margin-right: 0px;
+
+    padding-left: 0ch;
+    padding-right: 0px; 
+}
+
+/* no se usa en tu código */
+/* .margenpagina{
+    margin-left: 10%;
+    margin-right: 10%;
+
+    padding-left: 10%;
+    padding-right: 10%;
+
+}  */
+
+/* no se usa en tu código */ 
+/* .boxsolido{
+    border-style:solid ; 
+} */
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.row > div {
+    padding-left: 0px;
+    padding-right: 0px;
+}

@@ -1,0 +1,21 @@
+.mitad  {
+    width: 40%;
+    display: inline-block;
+}
+
+.fondo1 {
+    background-color: aquamarine;
+}
+
+.fondo2 {
+    background-color: cadetblue;
+}
+
+.redondo {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: chocolate;
+    line-height: 50px;
+    text-align: center;
+}

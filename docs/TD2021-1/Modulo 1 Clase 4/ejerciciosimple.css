@@ -1,0 +1,19 @@
+.colorfondo {
+    background-color: steelblue;
+}
+
+.colorletra {
+    color: salmon;
+}
+
+.tamanofuente {
+    font-size: smaller;
+}
+
+.tipofuente {
+    font-family: 'Lobster', cursive;
+}
+
+.bordecolor {
+    border: 1px solid red;
+}

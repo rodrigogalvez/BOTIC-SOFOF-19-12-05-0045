@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque div {
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(255, 254, 253);
+}
+
+.amarillo1, .amarillo2, .amarillo3 {
+    background-color: orange;
+    border: 1px solid white;
+}
+
+.verde4, .verde5, .verde6 {
+    background-color: yellowgreen;
+    border: 1px solid brown;
+}
+
+.azul7, .azul8, .azul9 {
+    background-color: skyblue;
+    border: 1px solid rgb(207, 149, 72);
+}
+
+.negro10 {
+    background-color: black;
+    border: 1px solid darkblue;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 390px) {
+    /*queda igual*/
+}
+
+@media (min-width: 391px) and (max-width: 660px) {
+
+.amarillo1 {
+    width: 40%;
+    display: inline-block;
+    margin-left: calc(40% - 4px);
+}
+
+.amarillo2 {
+    width: 20%;
+    display: inline-block;
+}
+
+.amarillo3 {
+    width: 90%;
+    float: right;
+}
+
+.verde4 {
+    width: 100%;
+    display: inline-block;
+}
+
+.verde5, .verde6 {
+    width: 50%;
+    float: left;
+}
+
+.azul7 {
+    width: 50%;
+    float: right;
+}
+
+.azul8 {
+    width: 60%;
+    float: left;
+}
+
+.azul9 {
+    width: 100%;
+    display: inline-block;
+}
+
+.negro10 {
+    width: 25%;
+    float: right;
+}
+    }
+
+@media (min-width: 661px) {
+
+.amarillo1 {
+    width: 90%;
+    float: right;
+}
+
+.amarillo2 {
+    width: 30%;
+    float: left;
+}
+
+.amarillo3 {
+    width: 70%;
+    float: left;
+}
+
+.verde4 {
+    width: 90%;
+    float: right;
+}
+
+.verde5 {
+    width: 30%;
+    float: left;
+}
+
+.verde6 {
+    width: 70%;
+    float: left;
+}
+
+.azul7 {
+    width: 90%;
+    float: right;
+}
+
+.azul8 {
+    width: 30%;
+    float: left;
+}
+
+.azul9 {
+    width: 70%;
+    float: left;
+}
+
+.negro10 {
+    width: 100%;
+    display: inline-block;
+}
+
+}

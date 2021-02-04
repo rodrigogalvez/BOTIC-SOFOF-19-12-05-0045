@@ -1,0 +1,152 @@
+
+/* 
+
+font-family: 'Lobster', cursive;
+font-family: 'Roboto', sans-serif;
+
+*/
+
+:root {
+    --colorfondo1: #008080;
+    --colorfondo2: #ffffff;
+    --colorletra1: #ffffff;
+    --colorletra2: #000000;
+    --colorcabecera: #009090;
+    --altocabecera: 64px;
+}
+
+body {
+    margin: 0px;
+    background-color: var(--colorfondo2);
+}
+
+.cabecera {
+    background-color: var(--colorcabecera);
+    /* height: var(--altocabecera); */
+}
+
+.cabecera div {
+    display: inline-block;
+    position: absolute;
+}
+
+.cabecera nav {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 100%;
+}
+
+.cabecera nav a {
+    color: var(--colorletra1);
+    height: var(--altocabecera);
+    line-height: var(--altocabecera);
+    vertical-align: top;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.fotoprincipal {
+    background-color: var(--colorfondo1);
+    text-align: center;
+}
+
+.fotoprincipal img {
+    width: 70%;
+
+}
+
+.contacto {
+    background-color: var(--colorfondo1);
+    height: var(--altocabecera);
+    text-align: center;
+    vertical-align: middle;
+    line-height: var(--altocabecera);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: larger;
+
+}
+
+.contacto .telefono {
+    float: left;
+    position: relative;
+    color: var(--colorletra1);
+}
+
+.contacto .titulo {
+    display: inline-block;
+    text-align: center;
+    color: var(--colorletra1);
+}
+
+.contacto .redessociales {
+    float: right;
+    position: relative;
+}
+
+.contacto .redessociales a {
+    text-decoration: none;
+}
+
+.contacto .redessociales a i {
+    color: var(--colorfondo1);
+    background-color: var(--colorletra1);
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.principal * {
+    font-family: 'Roboto', sans-serif;
+    color: var(--colorletra2);
+}
+
+.principal img  {
+    width: 400px;
+}
+
+.principal > div {
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.principal .rescate {
+    text-align: right;
+    padding-left: 10%;
+    padding-right: 2%;
+}
+
+.principal .crowdfunding {
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 10%;
+}
+
+.principal .crowdfunding a {
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 4px;
+    
+}
+
+.piedepagina {
+    height: var(--altocabecera);
+    background-color: var(--colorcabecera);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.piedepagina * {
+    color: var(--colorletra1);
+}
+
+.piedepagina a {
+    margin-left: 10px;
+    margin-right: 10px;
+}

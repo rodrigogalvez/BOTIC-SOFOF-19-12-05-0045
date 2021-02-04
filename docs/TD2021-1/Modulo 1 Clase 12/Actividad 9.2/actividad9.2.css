@@ -1,0 +1,68 @@
+/*.container {
+    width: 100%;
+    } */
+
+.titulo {
+  text-align: center;
+  color: whitesmoke;
+}
+
+.bloque {
+  box-sizing: border-box;
+}
+
+.fotomarco {
+  border: 2px solid;
+  color: whitesmoke;
+  margin: 5px;
+}
+
+.fotomarco img {
+  width: 100%;
+}
+
+.fotonumero {
+  text-align: center;
+}
+
+.pose {
+  text-align: center;
+  font-weight: bolder;
+  color: rgb(177, 220, 20);
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 399px) {
+  body {
+    background-color: cadetblue;
+  }
+
+  .fotomarco {
+    width: calc(100% - 20px);
+  }
+}
+
+@media (min-width: 400px) and (max-width: 799px) {
+  body {
+    background-color: violet;
+  }
+
+  .fotomarco {
+    width: calc(50% - 20px);
+    float: left;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background-color: coral;
+  }
+
+  .fotomarco {
+    width: calc(25% - 20px);
+    float: left;
+  }
+}
+
+/* https://www.w3schools.com/css/css3_mediaqueries_ex.asp*/

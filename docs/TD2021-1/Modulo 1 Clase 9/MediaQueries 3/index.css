@@ -1,0 +1,33 @@
+.celdaceleste, .celdaamarilla, .celdagris {
+    color: white;
+    border: 2px solid darkgray;
+    font-size: xx-large;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.celdaceleste {
+    background-color: dodgerblue;
+}
+
+.celdaamarilla {
+    background-color: yellow;
+    color: black;
+}
+
+.celdagris {
+    background-color: gray;
+}
+
+@media (min-width: 350px) {
+
+    .celdaamarilla:nth-child(3) {
+        width: 50%;
+    }
+
+    .celdagris:nth-child(5), .celdagris:nth-child(6) {
+        width: calc( 50% - 2px );
+        display: inline-block;
+    }
+
+}

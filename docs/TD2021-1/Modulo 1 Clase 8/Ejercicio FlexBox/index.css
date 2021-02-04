@@ -1,0 +1,13 @@
+.box  {
+    background-color: aquamarine;
+    height: 64px;
+    line-height: 64px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid teal;
+    border-radius: 4px;
+}
+
+.box:hover {
+    background-color: thistle;
+}

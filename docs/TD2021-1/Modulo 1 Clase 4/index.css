@@ -1,0 +1,42 @@
+body {
+    background-color: skyblue;
+}
+
+.indicegris {
+    background-color: lightgray;
+    border: 1px solid gray;
+    width: 30ch;
+}
+
+.indicegris h2 {
+    padding-left: 3ch;
+}
+
+.fotogato {
+    width: 10ch;
+    height: 10ch;
+    object-fit: contain;
+}
+
+#hola {
+    color: red;
+}
+
+a {
+    color: green;
+}
+
+#principal {
+    color: salmon;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+}
+
+.modificado {
+    font-family: fantasy;
+    font-weight: bolder;
+}
+
+h1 {
+    font-size: 60px;
+}

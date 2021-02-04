@@ -1,0 +1,36 @@
+.fotoajustada {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 10px 26px 1px gray;
+    background-color: gray;
+    transform: rotate(5deg);
+}
+
+h1 {
+    background-color: darkgray;
+    border-radius: 4px;
+    color: azure;
+    text-align: center;
+    box-shadow: 0px 10px 26px 1px gray;
+}
+
+h2 {
+    background-color: goldenrod;
+    border-radius: 4px;
+    padding-left: 30px;
+    line-height: 32px;
+    box-shadow: 0px 10px 26px 1px gray;
+
+}
+
+.contenedorfoto {
+    display: inline-block;
+    margin: 10px;
+}
+
+.fotogrande {
+    width: 100%;
+    object-fit: contain;
+}

@@ -1,0 +1,40 @@
+.titulo {
+    text-align: center;
+}
+
+.marcohabitacion {
+    border: 2px solid purple;
+    margin: 8px;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.fotohabitacion img {
+    width: 100%;
+    border: 1px solid red;
+}
+
+.nombrehabitacion {
+    text-align: center;
+}
+
+.preciohabitacion {
+    text-align: center;
+    font-weight: bolder;
+    color: purple;
+    font-size: 2em;
+}
+
+@media (min-width: 375px) {
+    .marcohabitacion {
+        width: calc( 50% - 18px );
+        display: inline-block;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .marcohabitacion {
+        width: calc( 25% - 20px);
+    }
+}

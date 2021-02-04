@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+.bloque {
+    text-align: center;}
+
+.bloque div {
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(255, 254, 253);
+    }
+
+.negro1, .negro2, .negro3 {
+    background-color: rgb(34, 33, 33);
+    border: 1px solid rgb(205, 216, 228);
+}
+
+.naranjo4, .naranjo5, .naranjo6 {
+    background-color: rgb(255, 174, 52);
+    border: 1px solid rgb(177, 61, 26);
+}
+
+.azul7, .azul8, .azul9 {
+    background-color: rgb(2, 100, 212);
+    border: 1px solid rgb(205, 216, 228);
+}   
+
+.verde10 {
+    background-color: rgb(16, 190, 83);
+    border: 1px solid rgb(205, 216, 228);
+    }
+
+/* MEDIA QUERIES*/
+
+@media (max-width: 200px) {
+/* se mantiene igual*/
+}
+
+@media (min-width:201px) and (max-width: 700px) {
+
+.negro2, .negro3 {
+    width: 50%;
+    float: left;
+}
+
+.naranjo4 {
+    width: 80%;
+    display: inline-block;
+}
+
+.naranjo5 {
+    width: 90%;
+    float: right;
+}
+
+.naranjo6 {
+    width: 90%;
+    float: left;
+}
+
+.azul7 {
+    width: 50%;
+    float: left;
+}
+
+.azul8 {
+    width: 100%;
+    display: inline-block;
+}
+
+.azul9 {
+    width: 50%;
+    display: inline-block;
+    margin-left: 50%;
+    
+}
+
+.verde10 {
+    width: 25%;
+    display: inline-block;
+}
+}
+
+@media (min-width: 701px) {
+
+.negro1 {
+    width: 20%;
+    float: left;
+}
+
+.negro2 {
+    width: 20%;
+    float: left;
+}
+
+.negro3 {
+    width: 60%;
+    float: left;
+}
+
+.naranjo4 {
+    width: 100%;
+    display: inline-block;
+}
+
+.naranjo5 {
+    width: 60%;
+    margin-left: 40%;
+}
+
+.naranjo6 {
+    width: 60%;
+    float: left;
+}
+
+.azul7, .azul8 {
+    width: 50%;
+    float: left;
+}
+
+.azul9 {
+    width: 100%;
+    display: inline-block;
+}
+
+.verde10 {
+    width: 50%;
+    float: right;
+}
+
+}

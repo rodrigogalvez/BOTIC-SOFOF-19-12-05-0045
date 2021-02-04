@@ -1,0 +1,8 @@
+Para respaldar:
+git add .
+git commit -m "mensaje"
+git push
+
+Para sincronizar o recuperar:
+git pull
+

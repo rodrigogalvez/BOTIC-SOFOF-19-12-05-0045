@@ -1,0 +1,49 @@
+h1 {
+   color: red; 
+}
+
+h2 {
+    color: blue;
+}
+
+h1,h2 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.titulo {
+    color: green;
+    border: solid 12px red;
+    border-bottom-style: dashed;
+    border-radius: 27px;
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+.azul  {
+    color: blue;
+    text-align: justify;
+}
+
+.rojo {
+    color: red;
+    text-align: justify;
+}
+
+.fotoredonda {
+    width: 200px;
+    border-radius: 100px;
+    display: block;
+    margin: auto;
+}
+
+p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul li a {
+    font-style: italic;
+}
+
+* {
+    color: hotpink;
+}

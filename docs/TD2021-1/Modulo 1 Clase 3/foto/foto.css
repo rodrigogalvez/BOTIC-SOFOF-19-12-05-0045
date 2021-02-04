@@ -1,0 +1,9 @@
+.foto {
+}
+
+.foto img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0px 4px 4px 0px gray;
+}

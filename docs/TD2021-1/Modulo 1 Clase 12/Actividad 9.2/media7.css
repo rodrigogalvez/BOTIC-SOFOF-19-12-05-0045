@@ -1,0 +1,112 @@
+/* clear both: La caja se posiciona por debajo de cualquier caja flotante.*/
+* {
+    box-sizing: border-box;
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque div {
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: rgb(17, 187, 230);
+    color: rgb(255, 254, 253);
+    border: 1px solid black;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 241px) {
+
+.azul2 {
+    width: 80%;
+    display: inline-block;
+}
+
+.azul8 {
+    width: 80%;
+    display: inline-block;
+}
+    }
+
+@media (min-width: 442px) and (max-width: 458px) {
+
+.azul2 {
+    width: 80%;
+    margin-left: 20%;
+}
+
+.azul3, .azul5, .azul7 {
+    width: 20%;
+    margin-left: 80%;
+}
+
+.azul4, .azul6 {
+    width: 100%;
+    display: inline-block;
+}
+
+.azul8, .azul9 {
+    width: 50%;
+    float: left;
+}
+
+.azul10 {
+    width: 100%;
+    display: inline-block;
+}
+    }
+
+@media (min-width: 459px) {
+
+.azul1 {
+    width: 20%;
+    margin-left: 80%;
+}
+
+.azul2 {
+    width: 20%;
+    float: left;
+}
+
+.azul3 {
+    width: 80%;
+    float: left;
+}
+
+.azul4 {
+    width: 20%;
+    margin-right: 80%;
+    display: inline-block;
+}
+
+.azul5 {
+    width: 75%;
+    margin-left: 25%;
+}
+
+.azul6, .azul7 {
+    width: 50%;
+    float: left;
+}
+
+.azul8 {
+    width: 25%;
+    float: left;
+}
+
+.azul9 {
+    width: 25%;
+    float: left;
+}
+
+.azul10 {
+    width: 25%;
+    margin-left: 75%;
+    display: inline-block;
+}
+
+
+}

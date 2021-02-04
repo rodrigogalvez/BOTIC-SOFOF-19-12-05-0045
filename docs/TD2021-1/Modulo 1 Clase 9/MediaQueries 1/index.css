@@ -1,0 +1,48 @@
+.foto {
+  background-color: lightslategray;
+  height: 150px;
+}
+
+.texto {
+  background-color: tan;
+  height: 200px;
+}
+
+.bloque {
+  display: block;
+}
+
+body {
+  background-color: blue;
+}
+
+@media (min-width: 600px) {
+  body {
+    background-color: red;
+  }
+
+  .bloque {
+    display: inline-block;
+    width: 49%;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background-color: yellow;
+  }
+
+  .bloque {
+    width: 33%;
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    background-color: green;
+  }
+
+  .bloque {
+    width: 300px;
+  }
+}

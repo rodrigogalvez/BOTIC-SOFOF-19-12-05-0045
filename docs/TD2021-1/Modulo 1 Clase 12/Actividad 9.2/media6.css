@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+.bloque {
+    text-align: center;
+}
+
+.bloque div {
+    padding: 20px;
+    font-weight: bolder;
+    font-size: 20px;
+    background-color: rgb(17, 187, 230);
+    color: rgb(255, 254, 253);
+    border: 1px solid black;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 428px) {
+
+.azul1, .azul2 {
+    width: 100%;
+}
+
+.azul3, .azul4 {
+    width: 50%;
+    float: left;
+}
+
+.azul5 {
+    width: 100%;
+    display: inline-block;
+}
+
+.azul6, .azul7 {
+    width: 50%;
+    float: left;
+}
+
+.azul8 {
+    width: 20%;
+    float: right;
+}
+
+.azul9, .azul10 {
+    width: 100%;
+    display: inline-block;
+}
+    }
+
+@media (min-width: 429px) and (max-width: 693px) {
+
+.azul1 {
+    width: 20%;
+}
+
+.azul2 {
+    width: 20%;
+    margin-left: 80%;
+}
+
+.azul3 {
+    width: 20%;
+    float: left;
+}
+
+.azul4 {
+    width: 80%;
+    float: left;
+}
+
+.azul5 {
+    width: 20%;
+    margin-right: 80%;
+    display: inline-block;
+}
+
+.azul6 {
+    width: 50%;
+    float: left;
+}
+
+.azul7 {
+    width: 50%;
+    float: left;
+}
+
+.azul8 {
+    width: 20%;
+    margin-left: 80%;
+    display: inline-block;
+}
+
+.azul9 {
+    width: 20%;
+}
+
+.azul10 {
+    width: 20%;
+}
+    }
+
+@media (min-width: 694px) {
+
+.azul1 {
+    width: 80%;
+}
+
+.azul2 {
+    width: 80%;
+    margin-left: 20%;
+}
+
+.azul3 {
+    width: 20%;
+    float: left;
+}
+
+.azul4 {
+    width: 20%;
+    float: left;
+}
+
+.azul5 {
+    width: 85%;
+    margin-left: 15%;
+    display: inline-block;
+}
+
+.azul6 {
+    width: 80%;
+    margin-left: 20%;
+}
+
+.azul7 {
+    width: 90%;
+    margin-left: 10%;
+}
+
+.azul8 {
+    width: 100%;
+}
+
+.azul9 {
+    width: 20%;
+}
+
+.azul10 {
+    width: 20%;
+    float: right;
+}
+
+
+}

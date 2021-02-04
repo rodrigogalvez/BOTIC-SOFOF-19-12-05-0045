@@ -1,0 +1,38 @@
+.cabecera {
+    height: 64px;
+    line-height: 64px;
+    background-color: blueviolet;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.fotoprincipal {
+    height: 200px;
+    line-height: 100px;
+    background-color: blueviolet;
+    color: white;
+    margin-bottom: 8px;
+}
+
+/* .columna  {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+} */
+
+.imagen {
+    height: 90px;
+    background-color: cornflowerblue;
+    margin-bottom: 8px;
+}
+
+.texto {
+    height: 120px;
+    background-color: cornsilk;
+    margin-bottom: 8px;
+}
+
+.piedepagina {
+    height: 90px;
+    background-color: crimson;
+}
